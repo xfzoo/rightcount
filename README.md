@@ -4,6 +4,8 @@
 
 RightCount is a minimal Chrome extension that shows a lightweight count bubble when you right-click selected text on a web page.
 
+
+
 ## 中文简介
 
 ### 这是什么
@@ -96,12 +98,9 @@ When you select text on a web page and right-click, it shows a small count bubbl
 
 RightCount started from a very simple thought:
 
-- Sometimes you only want a fast sense of how much text is selected
-- Existing tools are often too heavy, require copy and paste, or work best only for English
-- Mixed Chinese and English text is often counted in ways that do not feel intuitive
+At this stage, AI cannot accurately generate content with a specific word count, and no AI web interfaces have a real-time word count function. This leads to a daily workflow where you have to copy and paste the text into a text editor with a word counter, determine the exact word count, and then return to the webpage to tell the AI to delete some words if it's too long, or write more if it's too short. 
 
-RightCount focuses on one thing only:
-
+Therefore, RightCount wants to do just one thing: 
 making text counting feel instant, lightweight, and natural inside the normal reading flow.
 
 ### Counting rules
