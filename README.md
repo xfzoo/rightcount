@@ -6,7 +6,7 @@ RightCount is a minimal Chrome extension that shows a lightweight count bubble w
 
 <img src="./docs/images/screenshot.jpg" alt="RightCount screenshot" width="900">
 
-## 中文简介
+##
 
 ### 这是什么
 
@@ -86,7 +86,7 @@ RightCount 只会在你主动选中文字并右击时，临时读取当前网页
 - `scripts/package_extension.sh`: 打包脚本
 - `STORE_LISTING.md`: 商店文案草稿
 
-## English
+##
 
 ### What it is
 
