@@ -79,7 +79,7 @@ RightCount 只会在你主动选中文字并右击时，临时读取当前网页
 
 如果你启用了 GitHub Pages，未来可以公开访问：
 
-`https://xfzoo.github.io/rightcount/docs/privacy-policy.html`
+`https://xfzoo.github.io/rightcount/privacy-policy.html`
 
 ### 项目结构
 
@@ -165,4 +165,4 @@ The privacy policy page lives here:
 
 If GitHub Pages is enabled, it can be published at:
 
-`https://xfzoo.github.io/rightcount/docs/privacy-policy.html`
+`https://xfzoo.github.io/rightcount/privacy-policy.html`
