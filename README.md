@@ -1,42 +1,168 @@
 # RightCount
 
+[中文](#中文简介) | [English](#english)
+
 RightCount is a minimal Chrome extension that shows a lightweight count bubble when you right-click selected text on a web page.
 
-It is designed for mixed Chinese and English text:
+## 中文简介
 
-- Chinese is counted by character
-- English is counted by word
-- Numbers are counted as one token
-- Punctuation is ignored
+### 这是什么
 
-## Files
+RightCount 是一个极简的 Chrome 插件。
 
-- `manifest.json`, `content.js`, `placement-core.js`: extension source
-- `icons/`: Chrome Web Store and extension icons
-- `store-assets/`: screenshots and promo graphics for the Web Store listing
-- `docs/privacy-policy.html`: privacy policy page
-- `scripts/package_extension.sh`: creates an upload ZIP
-- `STORE_LISTING.md`: draft Chrome Web Store copy
+当你在网页里选中一段文字并右击时，它会立刻在页面左下角显示一个小小的数字气泡，用来告诉你这段文字的数量。
 
-## Local install
+### 这个插件的想法
 
-1. Open `chrome://extensions`
-2. Enable Developer Mode
-3. Click `Load unpacked`
-4. Select this repository folder
+我做 RightCount 的出发点很简单：
 
-## Packaging
+- 很多时候我们只是想快速知道一段文字大概有多少内容
+- 现有工具往往要么太重，要么要复制粘贴，要么只适合英文
+- 对中英文混排内容来说，很多计数工具的结果并不直观
+
+所以 RightCount 想做的事情只有一件：
+
+在尽量不打断阅读和操作流程的前提下，让“选中文字并快速看字数”这件事变得足够轻、足够快、足够自然。
+
+### 计数规则
+
+- 中文按字数统计
+- 英文按单词统计，而不是按字符统计
+- 数字按 1 个词统计
+- 标点符号忽略不计
+- 中英文混排会分别识别后再合并成一个结果
+
+例如：
+
+- `你好，world! 2026` 的结果是 `4`
+
+### 目前的交互方式
+
+- 在网页中选中一段文字
+- 右击
+- 页面左下角出现一个轻量数字气泡
+- 大约 2 秒后自动消失
+
+### 安装方式
+
+#### 开发者模式本地安装
+
+1. 打开 `chrome://extensions`
+2. 打开右上角 `Developer Mode`
+3. 点击 `Load unpacked`
+4. 选择本仓库目录
+
+### 打包
 
 ```bash
 ./scripts/package_extension.sh
 ```
 
-This creates `dist/RightCount-<version>.zip`.
+打包后会生成：
 
-## Privacy policy
+`dist/RightCount-<version>.zip`
 
-If you enable GitHub Pages for this repository, the privacy policy can be published at:
+### 隐私说明
+
+RightCount 只会在你主动选中文字并右击时，临时读取当前网页上的选中文本来计算数量。
+
+它不会：
+
+- 上传你的文字内容
+- 存储你的选中文本
+- 跟踪你的浏览记录
+- 使用分析或广告追踪
+
+隐私政策页面在这里：
+
+- `docs/privacy-policy.html`
+
+如果你启用了 GitHub Pages，未来可以公开访问：
 
 `https://xfzoo.github.io/rightcount/docs/privacy-policy.html`
 
-You should replace the contact placeholder in `docs/privacy-policy.html` before publishing.
+### 项目结构
+
+- `manifest.json`, `content.js`, `placement-core.js`: 插件源码
+- `icons/`: 插件图标
+- `store-assets/`: Chrome Web Store 截图与宣传素材
+- `docs/privacy-policy.html`: 隐私政策页面
+- `scripts/package_extension.sh`: 打包脚本
+- `STORE_LISTING.md`: 商店文案草稿
+
+## English
+
+### What it is
+
+RightCount is a minimal Chrome extension.
+
+When you select text on a web page and right-click, it shows a small count bubble in the lower-left corner of the page.
+
+### The idea behind it
+
+RightCount started from a very simple thought:
+
+- Sometimes you only want a fast sense of how much text is selected
+- Existing tools are often too heavy, require copy and paste, or work best only for English
+- Mixed Chinese and English text is often counted in ways that do not feel intuitive
+
+RightCount focuses on one thing only:
+
+making text counting feel instant, lightweight, and natural inside the normal reading flow.
+
+### Counting rules
+
+- Chinese is counted by character
+- English is counted by word, not by character
+- Numbers count as one token
+- Punctuation is ignored
+- Mixed Chinese and English text is detected separately and merged into one result
+
+Example:
+
+- `你好，world! 2026` returns `4`
+
+### Current interaction
+
+- Select text on a web page
+- Right-click
+- A lightweight number bubble appears in the lower-left corner
+- The bubble disappears automatically after about 2 seconds
+
+### Installation
+
+#### Local install in Developer Mode
+
+1. Open `chrome://extensions`
+2. Turn on `Developer Mode`
+3. Click `Load unpacked`
+4. Select this repository folder
+
+### Packaging
+
+```bash
+./scripts/package_extension.sh
+```
+
+This creates:
+
+`dist/RightCount-<version>.zip`
+
+### Privacy
+
+RightCount only reads the text you actively selected on the current page when you right-click, and only for the purpose of counting it.
+
+It does not:
+
+- send selected text to a server
+- store your selected text
+- track browsing history
+- use analytics or ad tracking
+
+The privacy policy page lives here:
+
+- `docs/privacy-policy.html`
+
+If GitHub Pages is enabled, it can be published at:
+
+`https://xfzoo.github.io/rightcount/docs/privacy-policy.html`
