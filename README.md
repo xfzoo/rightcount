@@ -4,7 +4,7 @@
 
 RightCount is a minimal Chrome extension that shows a lightweight count bubble when you right-click selected text on a web page.
 
-
+<img src="./docs/images/screenshot.jpg" alt="RightCount screenshot" width="900">
 
 ## 中文简介
 
